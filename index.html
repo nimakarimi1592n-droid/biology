@@ -16,48 +16,45 @@ body {
     background: linear-gradient(135deg, #071b30, #123d55);
     color: white;
     font-family: Tahoma, sans-serif;
-    text-align: center;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     padding: 20px;
 }
 
 .container {
     width: 100%;
     max-width: 500px;
+    padding: 30px 20px;
+    border-radius: 25px;
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 25px;
-    padding: 30px 20px;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
 }
 
 h1 {
     font-size: 30px;
-    margin-bottom: 15px;
 }
 
 p {
-    color: #d5e8f5;
     line-height: 2;
-    font-size: 16px;
+    color: #d5e8f5;
 }
 
 button, .join {
-    display: block;
     width: 100%;
+    display: block;
+    padding: 18px;
+    margin-top: 20px;
     border: none;
     border-radius: 15px;
-    padding: 17px;
-    margin-top: 20px;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: bold;
-    cursor: pointer;
     text-decoration: none;
+    cursor: pointer;
 }
 
-.show {
+.enter {
     background: #00d6a0;
     color: #062c28;
 }
@@ -67,49 +64,48 @@ button, .join {
     color: white;
 }
 
-.ads {
+#content {
     display: none;
+}
+
+.notice {
+    background: rgba(0,214,160,0.13);
+    border: 1px solid #00d6a0;
+    border-radius: 18px;
+    padding: 20px;
     margin-top: 25px;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 2;
 }
 
 .ad-box {
     background: rgba(255,255,255,0.08);
     border-radius: 15px;
     padding: 15px;
-    margin: 20px 0;
+    margin-top: 25px;
     min-height: 100px;
 }
-
-.ad-title {
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: #00e6b0;
-}
-
-#joinSection {
-    display: none;
-}
-
 </style>
 
 <script>
 !function(e,t,n){
-    e.yektanetAnalyticsObject=n,
-    e[n]=e[n]||function(){e[n].q.push(arguments)},
-    e[n].q=e[n].q||[];
-    var a=t.getElementsByTagName("head")[0],
-    r=new Date,
-    c="https://cdn.yektanet.ir/superscript-v2/9zyVSer6/native-nima1592.ir-46655/yn_pub.js?v="
-    +r.getFullYear().toString()+"0"+r.getMonth()+"0"+r.getDate()+"0"+r.getHours(),
-    s=t.createElement("link");
-    s.rel="preload",
-    s.as="script",
-    s.href=c,
-    a.appendChild(s);
-    var l=t.createElement("script");
-    l.async=!0,
-    l.src=c,
-    a.appendChild(l);
+e.yektanetAnalyticsObject=n,
+e[n]=e[n]||function(){e[n].q.push(arguments)},
+e[n].q=e[n].q||[];
+var a=t.getElementsByTagName("head")[0],
+r=new Date,
+c="https://cdn.yektanet.ir/superscript-v2/9zyVSer6/native-nima1592.ir-46655/yn_pub.js?v="
++r.getFullYear().toString()+"0"+r.getMonth()+"0"+r.getDate()+"0"+r.getHours(),
+s=t.createElement("link");
+s.rel="preload",
+s.as="script",
+s.href=c,
+a.appendChild(s);
+var l=t.createElement("script");
+l.async=!0,
+l.src=c,
+a.appendChild(l);
 }(window,document,"yektanet");
 </script>
 
@@ -121,47 +117,34 @@ button, .join {
 
 <h1>Biology 8/4/1405</h1>
 
-<p>
-به گروه زیست‌شناسی خوش آمدید.
-<br>
-برای ادامه، روی دکمه زیر بزنید.
-</p>
+<p>به صفحه ورود گروه زیست‌شناسی خوش آمدید.</p>
 
-<button class="show" onclick="showAds()">
-نمایش تبلیغات
+<button class="enter" id="firstButton" onclick="openPage()">
+ورود به گروه
 </button>
 
-<div class="ads" id="ads">
+<div id="content">
 
-<h2>تبلیغات</h2>
+<div class="notice">
+برای ادامه، محتوای این صفحه را مشاهده کنید.
+</div>
 
 <div class="ad-box">
-<div class="ad-title">تبلیغ اول</div>
 <div id="pos-article-display-119277"></div>
 </div>
-
-<div class="ad-box">
-<div class="ad-title">تبلیغ دوم</div>
-<div id="pos-article-display-SECOND-ID"></div>
-</div>
-
-<div id="joinSection">
-<p>برای ورود به گروه روی دکمه زیر بزنید.</p>
 
 <a class="join" href="https://t.me/+Mk3Yz5v9TAYyYjA8">
 ورود به گروه تلگرام
 </a>
-</div>
 
 </div>
 
 </div>
 
 <script>
-function showAds() {
-    document.getElementById("ads").style.display = "block";
-    document.getElementById("joinSection").style.display = "block";
-    document.querySelector(".show").style.display = "none";
+function openPage() {
+    document.getElementById("content").style.display = "block";
+    document.getElementById("firstButton").style.display = "none";
 }
 </script>
 
