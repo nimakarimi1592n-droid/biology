@@ -13,172 +13,83 @@
 body {
     margin: 0;
     min-height: 100vh;
+    background: linear-gradient(135deg, #071b30, #123d55);
+    color: white;
+    font-family: Tahoma, sans-serif;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    font-family: Tahoma;
-    background: #080d1c;
-    color: white;
 }
 
-.bg {
-    position: fixed;
-    width: 450px;
-    height: 450px;
-    background: #075985;
-    filter: blur(150px);
-    opacity: .35;
-    top: -200px;
-    right: -100px;
-}
-
-.bg2 {
-    position: fixed;
-    width: 450px;
-    height: 450px;
-    background: #4f46e5;
-    filter: blur(150px);
-    opacity: .3;
-    bottom: -200px;
-    left: -100px;
-}
-
-.card {
-    position: relative;
+.container {
     width: 100%;
-    max-width: 430px;
-    padding: 35px 24px;
-    text-align: center;
-    border-radius: 28px;
-    background: rgba(255,255,255,.07);
-    border: 1px solid rgba(255,255,255,.12);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 20px 70px #0008;
-}
-
-.logo {
-    width: 70px;
-    height: 70px;
-    margin: auto auto 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 22px;
-    background: linear-gradient(135deg,#0284c7,#4f46e5);
-    font-size: 32px;
+    max-width: 500px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 25px;
+    padding: 30px 20px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
 }
 
 h1 {
-    font-size: 24px;
-}
-
-.subtitle {
-    color: #94a3b8;
-    font-size: 13px;
-    line-height: 2;
-}
-
-.line {
-    width: 55px;
-    height: 3px;
-    background: #38bdf8;
-    margin: 22px auto;
-    border-radius: 10px;
-}
-
-.status {
-    min-height: 45px;
-    color: #cbd5e1;
-    font-size: 14px;
-    line-height: 2;
-}
-
-button {
-    width: 100%;
-    padding: 15px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 13px;
-    background: linear-gradient(135deg,#0284c7,#4f46e5);
-    color: white;
-    font-family: Tahoma;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-button:disabled {
-    opacity: .5;
-}
-
-.ad-section {
-    display: none;
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 15px;
-    background: rgba(255,255,255,.05);
-    border: 1px solid rgba(255,255,255,.1);
-}
-
-.ad-title {
-    color: #94a3b8;
-    font-size: 12px;
+    font-size: 30px;
     margin-bottom: 15px;
 }
 
-.timer {
-    width: 145px;
-    height: 145px;
-    margin: 25px auto;
-    border-radius: 50%;
-    border: 5px solid #263449;
-    border-top-color: #38bdf8;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    font-size: 60px;
-    color: #38bdf8;
-}
-
-.pulse {
-    animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-    50% {
-        transform: scale(1.1);
-        box-shadow: 0 0 35px #38bdf855;
-    }
-}
-
-.message {
-    display: none;
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 13px;
-    font-size: 13px;
+p {
+    color: #d5e8f5;
     line-height: 2;
+    font-size: 16px;
 }
 
-.success {
-    background: #064e3b55;
-    color: #6ee7b7;
+button, .join {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    padding: 17px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.error {
-    background: #7f1d1d44;
-    color: #fca5a5;
+.show {
+    background: #00d6a0;
+    color: #062c28;
 }
 
-.footer {
+.join {
+    background: #229ED9;
+    color: white;
+}
+
+.ads {
+    display: none;
     margin-top: 25px;
-    font-size: 11px;
-    color: #64748b;
 }
 
-.hidden {
-    display: none !important;
+.ad-box {
+    background: rgba(255,255,255,0.08);
+    border-radius: 15px;
+    padding: 15px;
+    margin: 20px 0;
+    min-height: 100px;
 }
+
+.ad-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #00e6b0;
+}
+
+#joinSection {
+    display: none;
+}
+
 </style>
 
 <script>
@@ -187,10 +98,10 @@ button:disabled {
     e[n]=e[n]||function(){e[n].q.push(arguments)},
     e[n].q=e[n].q||[];
     var a=t.getElementsByTagName("head")[0],
-        r=new Date,
-        c="https://cdn.yektanet.ir/superscript-v2/9zyVSer6/native-nima1592.ir-46655/yn_pub.js?v="
-            +r.getFullYear().toString()+"0"+r.getMonth()+"0"+r.getDate()+"0"+r.getHours(),
-        s=t.createElement("link");
+    r=new Date,
+    c="https://cdn.yektanet.ir/superscript-v2/9zyVSer6/native-nima1592.ir-46655/yn_pub.js?v="
+    +r.getFullYear().toString()+"0"+r.getMonth()+"0"+r.getDate()+"0"+r.getHours(),
+    s=t.createElement("link");
     s.rel="preload",
     s.as="script",
     s.href=c,
@@ -206,155 +117,52 @@ button:disabled {
 
 <body>
 
-<div class="bg"></div>
-<div class="bg2"></div>
+<div class="container">
 
-<div class="card">
+<h1>Biology 8/4/1405</h1>
 
-    <div class="logo">🧬</div>
+<p>
+به گروه زیست‌شناسی خوش آمدید.
+<br>
+برای ادامه، روی دکمه زیر بزنید.
+</p>
 
-    <h1>Biology 8/4/1405</h1>
+<button class="show" onclick="showAds()">
+نمایش تبلیغات
+</button>
 
-    <p class="subtitle">
-        سامانه ورود به گروه زیست‌شناسی
-    </p>
+<div class="ads" id="ads">
 
-    <div class="line"></div>
+<h2>تبلیغات</h2>
 
-    <p class="status" id="status">
-        برای شروع فرآیند ورود به گروه روی دکمه زیر بزنید.
-    </p>
+<div class="ad-box">
+<div class="ad-title">تبلیغ اول</div>
+<div id="pos-article-display-119277"></div>
+</div>
 
-    <button id="startBtn" onclick="showAds()">
-        شروع ورود
-    </button>
+<div class="ad-box">
+<div class="ad-title">تبلیغ دوم</div>
+<div id="pos-article-display-SECOND-ID"></div>
+</div>
 
-    <div class="ad-section" id="adSection">
+<div id="joinSection">
+<p>برای ورود به گروه روی دکمه زیر بزنید.</p>
 
-        <div class="ad-title">
-            برای ادامه، در صورت تمایل یکی از تبلیغات زیر را مشاهده کنید.
-        </div>
+<a class="join" href="https://t.me/+Mk3Yz5v9TAYyYjA8">
+ورود به گروه تلگرام
+</a>
+</div>
 
-        <div id="pos-article-display-119277"></div>
-
-        <button id="checkBtn" onclick="checkIP()">
-            بررسی IP و ورود به گروه
-        </button>
-
-    </div>
-
-    <div class="message" id="message"></div>
-
-    <div class="timer" id="timer">5</div>
-
-    <div class="footer">
-        BIOLOGY 8/4 • 1405
-    </div>
+</div>
 
 </div>
 
 <script>
-
-const statusText = document.getElementById("status");
-const startBtn = document.getElementById("startBtn");
-const adSection = document.getElementById("adSection");
-const checkBtn = document.getElementById("checkBtn");
-const message = document.getElementById("message");
-const timer = document.getElementById("timer");
-
 function showAds() {
-
-    startBtn.classList.add("hidden");
-    adSection.style.display = "block";
-
-    statusText.textContent =
-        "تبلیغات نمایش داده شدند. پس از مشاهده، برای بررسی IP اقدام کنید.";
-
+    document.getElementById("ads").style.display = "block";
+    document.getElementById("joinSection").style.display = "block";
+    document.querySelector(".show").style.display = "none";
 }
-
-async function checkIP() {
-
-    checkBtn.disabled = true;
-    message.style.display = "none";
-
-    statusText.textContent = "در حال بررسی کشور IP...";
-
-    try {
-
-        const response = await fetch("https://ipapi.co/json/");
-
-        if (!response.ok) throw new Error();
-
-        const data = await response.json();
-
-        if (!data.country_code) throw new Error();
-
-        if (data.country_code === "IR") {
-
-            message.className = "message success";
-            message.textContent =
-                "✓ IP ایران تأیید شد. در حال آماده‌سازی ورود به گروه...";
-
-            message.style.display = "block";
-
-            checkBtn.classList.add("hidden");
-
-            startTimer();
-
-        } else {
-
-            message.className = "message error";
-            message.textContent =
-                "⚠️ IP شما متعلق به ایران نیست. لطفاً VPN را خاموش کنید و دوباره تلاش کنید.";
-
-            message.style.display = "block";
-            statusText.textContent = "ورود تأیید نشد.";
-
-            checkBtn.disabled = false;
-        }
-
-    } catch (error) {
-
-        message.className = "message error";
-        message.textContent =
-            "اتصال اینترنت برقرار نیست. لطفاً اینترنت خود را بررسی کنید.";
-
-        message.style.display = "block";
-        checkBtn.disabled = false;
-    }
-}
-
-function startTimer() {
-
-    let seconds = 5;
-
-    timer.style.display = "flex";
-    timer.classList.add("pulse");
-    timer.textContent = seconds;
-
-    const countdown = setInterval(function() {
-
-        seconds--;
-        timer.textContent = seconds;
-
-        if (seconds <= 0) {
-
-            clearInterval(countdown);
-
-            timer.classList.remove("pulse");
-            timer.textContent = "✓";
-
-            statusText.textContent = "در حال ورود به گروه...";
-
-            setTimeout(function() {
-                window.location.href =
-                    "https://t.me/+Mk3Yz5v9TAYyYjA8";
-            }, 500);
-        }
-
-    }, 1000);
-}
-
 </script>
 
 </body>
