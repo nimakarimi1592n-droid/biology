@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biology 8/4/1405</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Tahoma;
+    background: #080d1c;
+    color: white;
+    padding: 20px;
+}
+
+.bg {
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    background: #075985;
+    filter: blur(150px);
+    opacity: .35;
+    top: -200px;
+    right: -100px;
+    pointer-events: none;
+}
+
+.bg2 {
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    background: #4f46e5;
+    filter: blur(150px);
+    opacity: .3;
+    bottom: -200px;
+    left: -100px;
+    pointer-events: none;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    padding: 35px 24px;
+    text-align: center;
+    border-radius: 28px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 70px #0008;
+    animation: show 1s ease;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin: auto auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    background: linear-gradient(135deg,#0284c7,#4f46e5);
+    font-size: 32px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #94a3b8;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.line {
+    width: 55px;
+    height: 3px;
+    background: #38bdf8;
+    margin: 22px auto;
+    border-radius: 10px;
+}
+
+.status {
+    min-height: 45px;
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 2;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 13px;
+    background: linear-gradient(135deg,#0284c7,#4f46e5);
+    color: white;
+    font-family: Tahoma;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px #0284c755;
+}
+
+button:disabled {
+    opacity: .5;
+    cursor: wait;
+}
+
+.timer {
+    width: 145px;
+    height: 145px;
+    margin: 25px auto;
+    border-radius: 50%;
+    border: 5px solid #263449;
+    border-top-color: #38bdf8;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+.pulse {
+    display: flex;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 35px #38bdf855;
+    }
+}
+
+.message {
+    display: none;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 13px;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.success {
+    background: #064e3b55;
+    border: 1px solid #10b98166;
+    color: #6ee7b7;
+}
+
+.error {
+    background: #7f1d1d44;
+    border: 1px solid #ef444466;
+    color: #fca5a5;
+}
+
+.ad-section {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.ad-title {
+    color: #94a3b8;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 11px;
+    color: #64748b;
+}
+
+.hidden {
+    display: none !important;
+}
+</style>
+
+<script>
+!function(e,t,n){
+    e.yektanetAnalyticsObject=n,
+    e[n]=e[n]||function(){e[n].q.push(arguments)},
+    e[n].q=e[n].q||[];
+    var a=t.getElementsByTagName("head")[0],
+        r=new Date,
+        c="https://cdn.yektanet.ir/superscript-v2/9zyVSer6/native-nima1592.ir-46655/yn_pub.js?v="
+            +r.getFullYear().toString()+"0"+r.getMonth()+"0"+r.getDate()+"0"+r.getHours(),
+        s=t.createElement("link");
+    s.rel="preload",
+    s.as="script",
+    s.href=c,
+    a.appendChild(s);
+    var l=t.createElement("script");
+    l.async=!0,
+    l.src=c,
+    a.appendChild(l);
+}(window,document,"yektanet");
+</script>
+
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="bg2"></div>
+
+<div class="card">
+
+    <div class="logo">🧬</div>
+
+    <h1>Biology 8/4/1405</h1>
+
+    <p class="subtitle">
+        سامانه ورود به گروه زیست‌شناسی
+    </p>
+
+    <div class="line"></div>
+
+    <p class="status" id="status">
+        برای ادامه و ورود به گروه روی دکمه زیر بزنید.
+    </p>
+
+    <button id="firstBtn" onclick="showAd()">
+        ورود
+    </button>
+
+    <div class="ad-section" id="adSection">
+        <div class="ad-title">تبلیغات</div>
+
+        <div id="pos-article-display-119277"></div>
+
+        <button id="secondBtn" onclick="checkIP()">
+            ورود به گروه
+        </button>
+    </div>
+
+    <div class="message" id="message"></div>
+
+    <div class="timer" id="timer">5</div>
+
+    <div class="footer">
+        BIOLOGY 8/4 • 1405
+    </div>
+
+</div>
+
+<script>
+
+const statusText = document.getElementById("status");
+const firstBtn = document.getElementById("firstBtn");
+const secondBtn = document.getElementById("secondBtn");
+const adSection = document.getElementById("adSection");
+const message = document.getElementById("message");
+const timer = document.getElementById("timer");
+
+let countdown;
+
+function showAd() {
+
+    firstBtn.classList.add("hidden");
+
+    adSection.style.display = "block";
+
+    statusText.textContent =
+        "برای ادامه، روی ورود به گروه بزنید.";
+
+}
+
+async function checkIP() {
+
+    secondBtn.disabled = true;
+
+    message.style.display = "none";
+
+    statusText.textContent = "در حال بررسی اتصال شما...";
+
+    try {
+
+        const response = await fetch("https://ipapi.co/json/");
+
+        if (!response.ok) {
+            throw new Error();
+        }
+
+        const data = await response.json();
+
+        if (data.country_code === "IR") {
+
+            message.className = "message success";
+            message.textContent =
+                "✓ اتصال تأیید شد! در حال آماده‌سازی ورود به گروه...";
+
+            message.style.display = "block";
+
+            secondBtn.classList.add("hidden");
+
+            startTimer();
+
+        } else {
+
+            message.className = "message error";
+            message.textContent =
+                "⚠️ کشور IP شما ایران نیست. لطفاً VPN خود را خاموش کنید و دوباره تلاش کنید.";
+
+            message.style.display = "block";
+
+            statusText.textContent = "نیاز به بررسی مجدد اتصال";
+
+            secondBtn.disabled = false;
+        }
+
+    } catch (error) {
+
+        message.className = "message error";
+        message.textContent =
+            "اتصال اینترنت برقرار نیست. لطفاً اینترنت خود را بررسی کنید.";
+
+        message.style.display = "block";
+
+        secondBtn.disabled = false;
+    }
+}
+
+function startTimer() {
+
+    let seconds = 5;
+
+    timer.style.display = "flex";
+    timer.classList.add("pulse");
+
+    timer.textContent = seconds;
+
+    countdown = setInterval(function() {
+
+        seconds--;
+
+        timer.textContent = seconds;
+
+        if (seconds <= 0) {
+
+            clearInterval(countdown);
+
+            timer.classList.remove("pulse");
+
+            timer.textContent = "✓";
+
+            statusText.textContent = "در حال ورود به گروه...";
+
+            setTimeout(function() {
+
+                window.location.href =
+                    "https://t.me/+Mk3Yz5v9TAYyYjA8";
+
+            }, 500);
+        }
+
+    }, 1000);
+}
+
+</script>
+
+</body>
+          </html>
